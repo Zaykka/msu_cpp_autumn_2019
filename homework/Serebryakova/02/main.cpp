@@ -1,25 +1,22 @@
 #include <iostream>
 #include "allocator.h"
+#include <iostream>
+#include <cassert>
+#include <string>
 
 void test1() {
     LinearAllocator a(16);
     char *ptr = a.alloc(30);
     assert(ptr == nullptr);
-    if ( ptr == nullptr) {
-        std::cout << "test1 ";
-    }
 }
 void test2() {
     LinearAllocator a(16);
     char* ptr1 = a.alloc(8);
     assert(ptr1 != nullptr);
-    std::cout << ptr1 << std::endl;
     char* ptr2 = a.alloc(4);
     assert(ptr2 != nullptr);
-    std::cout << ptr2 << std::endl;
     char* ptr3 = a.alloc(8);
     assert(ptr3 == nullptr);
-    std::cout << "test2 " << std::endl;
 }
 void test3() {
     LinearAllocator a(16);
@@ -28,7 +25,6 @@ void test3() {
     a.reset();
     ptr2 = a.alloc(8);
     assert(ptr1 == ptr2);
-
 }
 void test4() {
     LinearAllocator a(16);
@@ -38,7 +34,6 @@ void test4() {
     }
     std::string s(ptr1, ptr1+8);
     assert(s == "iiiiiiii");
-    std::cout << s << std::endl;
 }
 int main()
 {
