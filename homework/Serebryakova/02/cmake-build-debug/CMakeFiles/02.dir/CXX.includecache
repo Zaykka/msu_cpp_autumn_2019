@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sonyaserebryakova/CLionProjects/ts/homework/Serebryakova/02/allocator.h
+cstddef
+-
+
+/Users/sonyaserebryakova/CLionProjects/ts/homework/Serebryakova/02/main.cpp
+iostream
+-
+allocator.h
+/Users/sonyaserebryakova/CLionProjects/ts/homework/Serebryakova/02/allocator.h
+
