@@ -9,6 +9,7 @@ class Matrix{
     public:
         Row(int* arr, size_t);
         int& operator[](const size_t);
+        const int& operator[](const size_t) const;
         ~Row();
     };
 public:
@@ -16,6 +17,7 @@ public:
     size_t getRows() const;
     size_t getColumns() const;
     Row operator[](const size_t);
+    const Row operator[](const size_t) const;
     bool operator==(const Matrix&) const;
     bool operator!=(const Matrix&) const;
     Matrix& operator*=(const int);

@@ -10,6 +10,13 @@ int& Matrix::Row::operator[](const size_t j) {
     return arr[j];
 }
 
+const int& Matrix::Row::operator[](const size_t j) const {
+    if (j >= len) {
+        throw std::out_of_range("");
+    }
+    return arr[j];
+}
+
 Matrix::Row::~Row() =default;
 
 Matrix::Matrix(size_t rows, size_t cols) : rows(rows), cols(cols) {
@@ -20,6 +27,13 @@ Matrix::Matrix(size_t rows, size_t cols) : rows(rows), cols(cols) {
 }
 
     Matrix::Row Matrix::operator[](const size_t i) {
+    if (i >= rows) {
+        throw std::out_of_range("");
+    }
+    return Matrix::Row(ptr[i], cols);
+}
+
+const Matrix::Row Matrix::operator[](const size_t i) const {
     if (i >= rows) {
         throw std::out_of_range("");
     }
