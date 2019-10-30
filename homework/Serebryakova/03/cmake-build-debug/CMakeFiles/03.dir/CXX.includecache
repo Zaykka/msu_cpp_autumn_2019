@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sonyaserebryakova/CLionProjects/ts/msu_cpp_autumn_2019/homework/Serebryakova/03/header.h
+
+/Users/sonyaserebryakova/CLionProjects/ts/msu_cpp_autumn_2019/homework/Serebryakova/03/tests.cpp
+iostream
+-
+header.h
+/Users/sonyaserebryakova/CLionProjects/ts/msu_cpp_autumn_2019/homework/Serebryakova/03/header.h
+
