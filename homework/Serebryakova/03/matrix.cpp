@@ -21,12 +21,12 @@ Matrix::Row::~Row() =default;
 
 Matrix::Matrix(size_t rows, size_t cols) : rows(rows), cols(cols) {
     ptr = new int*[rows];
-    for (int i = 0; i < rows; ++i){
+    for (int i = 0; i < rows; ++i) {
         ptr[i] = new int [cols];
     }
 }
 
-    Matrix::Row Matrix::operator[](const size_t i) {
+Matrix::Row Matrix::operator[](const size_t i) {
     if (i >= rows) {
         throw std::out_of_range("");
     }
@@ -83,7 +83,7 @@ Matrix::~Matrix() {
     for (int i = 0; i < rows; ++i) {
         delete [] ptr[i];
     }
-    delete ptr;
+    delete [] ptr;
 }
 
 

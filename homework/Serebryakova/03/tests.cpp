@@ -17,7 +17,7 @@ void test2() {
     }
 }
 
-void test4() {
+void test3() {
     Matrix m(3, 4);
     Matrix m1(2, 4);
     Matrix m2(3, 3);
@@ -40,7 +40,7 @@ void test4() {
     assert(!(m != m4));
 }
 
-void test3() {
+void test4() {
     Matrix m(2, 2);
     for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < 2; ++j) {

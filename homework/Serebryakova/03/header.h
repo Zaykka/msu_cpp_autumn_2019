@@ -1,6 +1,6 @@
 #pragma
 
-class Matrix{
+class Matrix {
     int **ptr;
     size_t rows, cols;
     class Row {
