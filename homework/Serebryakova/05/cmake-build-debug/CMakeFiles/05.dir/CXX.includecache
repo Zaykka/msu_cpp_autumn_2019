@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sonyaserebryakova/CLionProjects/ts/msu_cpp_autumn_2019/homework/Serebryakova/05/main.cpp
+iostream
+-
+serializer.h
+/Users/sonyaserebryakova/CLionProjects/ts/msu_cpp_autumn_2019/homework/Serebryakova/05/serializer.h
+sstream
+-
+
+/Users/sonyaserebryakova/CLionProjects/ts/msu_cpp_autumn_2019/homework/Serebryakova/05/serializer.h
+iostream
+-
+
