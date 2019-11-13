@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <exception>
 
 enum class Error
 {
@@ -27,12 +28,12 @@ public:
 private:
     // process использует variadic templates
     template <class T, class... ArgsT>
-    Error process(T& p, ArgsT&... args) {
+    Error process(T p, ArgsT... args) {
         put(p);
         return process(args...);
     }
     template <class T>
-    Error process(T& last) {
+    Error process(T last) {
         put(last);
         return Error::NoError;
     }
@@ -49,7 +50,7 @@ class Deserializer {
 public:
     explicit Deserializer(std::istream& in) : in(in) {}
     template <class T>
-    Error load(T &object) {
+    Error load(T& object) {
         return object.deserialize(*this);
     }
     template <class... ArgsT>
@@ -86,7 +87,11 @@ private:
         if (!isdigit(s[0])) {
             return Error::CorruptedArchive;
         }
-        val = std::stoull(s);
+        try {
+            val = std::stoull(s);
+        } catch(std::exception &e) {
+            return Error::CorruptedArchive;
+        }
         return Error::NoError;
     }
 };
