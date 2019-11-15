@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sonyaserebryakova/CLionProjects/ts/msu_cpp_autumn_2019/homework/Serebryakova/04/bigInt.h
+iostream
+-
+
+/Users/sonyaserebryakova/CLionProjects/ts/msu_cpp_autumn_2019/homework/Serebryakova/04/main.cpp
+iostream
+-
+bigInt.h
+/Users/sonyaserebryakova/CLionProjects/ts/msu_cpp_autumn_2019/homework/Serebryakova/04/bigInt.h
+limits.h
+-
+sstream
+-
+
