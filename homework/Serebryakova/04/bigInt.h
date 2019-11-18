@@ -11,6 +11,8 @@ public:
 
     BigInt(int);
 
+    ~BigInt();
+
     BigInt(const BigInt&);
 
     BigInt plus(const BigInt& right) const;

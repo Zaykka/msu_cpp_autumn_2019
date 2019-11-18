@@ -177,4 +177,8 @@ bool operator>=(const BigInt& right, const BigInt& left) {
     return right == left || right > left;
 }
 
+BigInt::~BigInt() {
+    delete [] num;
+}
+
 
