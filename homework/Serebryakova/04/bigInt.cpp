@@ -2,7 +2,7 @@
 #include "bigInt.h"
 
 
-BigInt::BigInt() : num(new char[1]),size(0), sign(true) {}
+BigInt::BigInt() : num(nullptr), size(0), sign(true) {}
 BigInt::BigInt(int val) {
     if (!val) {
         size = 1;
