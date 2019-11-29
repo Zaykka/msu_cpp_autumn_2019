@@ -12,9 +12,8 @@ std::string to_str(T&& x) {
 
 template<class... argsT>
 std::string format(const std::string& st, argsT&&... args) {
-    std::string str(st);
-    using std::to_string;
-    if (str.find("{}") != std::string::npos) {
+    std::stringstream out;
+    if (st.find("{}") != std::string::npos) {
         throw std::runtime_error("");
     }
     std::vector<std::string> param = {to_str(std::forward<argsT>(args))... };
@@ -30,17 +29,17 @@ std::string format(const std::string& st, argsT&&... args) {
                 r += st[i] - '0';
                 ++i;
             }
+            ++i;
             if (r >= param.size()) {
                 throw std::runtime_error("");
             }
-            std::string repl = "{" + std::to_string(r) + "}";
-            std::size_t pos = str.find(repl);
-            str.replace(pos, repl.length(), param[r]);
+            out << param[r];
+        }
+        if (st[i] == '}') {
+            throw std::runtime_error("");
+        } else if (st[i] != '\0'){
+            out << st[i];
         }
     }
-    if (str.find('}') != std::string::npos) {
-        throw std::runtime_error("tt");
-    }
-    return str;
+    return out.str();
 }
-
