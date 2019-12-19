@@ -4,6 +4,8 @@
 #include <sstream>
 #include <vector>
 #include <thread>
+#include <exception>
+#include <algorithm>
 
 
 const std::string COPY = "copy";
@@ -94,8 +96,7 @@ int main(){
             });
 
             std::thread th2([buf, read_]() {
-                std::sort(buf +read_,
-                    buf + 2 * read_);
+                std::sort(buf + read_, buf + 2 * read_);
             });
 
             th1.join();
@@ -104,6 +105,7 @@ int main(){
             out.open(name, std::ios::binary);
             if(!out.is_open()){
                 delete[] buf;
+                throw std::runtime_error("can't open file");
                 return 1;
             }
             out.write((char*) buf, read_ * sizeof(uint64_t));
@@ -115,6 +117,7 @@ int main(){
             out.open(name, std::ios::binary);
             if(!out.is_open()){
                 delete[] buf;
+                throw std::runtime_error("can't open file");
                 return 1;
             }
             out.write((char*) (buf + read_), cnt - read_ * sizeof(uint64_t));
