@@ -123,7 +123,12 @@ void file_sort(std::ofstream& out) {
             out.open(name, std::ios::binary);
             if(!out.is_open()) {
                 delete[] buf;
+<<<<<<< HEAD
                 throw std::runtime_error("Can't open file: " + name);
+=======
+                throw std::runtime_error("can't open file");
+                return 1;
+>>>>>>> 2b3ecce2a811ac5bb092d69994b41e283b242189
             }
             out.write((char*) buf, read_ * sizeof(uint64_t));
             out.close();
@@ -134,7 +139,12 @@ void file_sort(std::ofstream& out) {
             out.open(name, std::ios::binary);
             if(!out.is_open()){
                 delete[] buf;
+<<<<<<< HEAD
                 throw std::runtime_error("Can't open file: " + name);
+=======
+                throw std::runtime_error("can't open file");
+                return 1;
+>>>>>>> 2b3ecce2a811ac5bb092d69994b41e283b242189
             }
             out.write((char*) (buf + read_), cnt - read_ * sizeof(uint64_t));
             out.close();
